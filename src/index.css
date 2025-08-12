@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Dark Theme Design System */
+@layer base {
+  :root {
+    /* Portfolio Dark Theme */
+    --page-bg: 0 0% 0%; /* Pure black page background */
+    --dashboard-bg: 0 0% 6.7%; /* Dashboard container background #111 */
+    --card-bg: 0 0% 8.2%; /* Card background #151515 */
+    --card-hover: 0 0% 10%; /* Card hover state */
+    
+    /* Text Colors */
+    --text-primary: 0 0% 98%; /* Primary white text */
+    --text-secondary: 0 0% 70%; /* Secondary gray text */
+    --text-muted: 0 0% 50%; /* Muted text */
+    
+    /* Accent Colors - Minimal palette */
+    --accent-primary: 180 100% 50%; /* Cyan accent */
+    --accent-secondary: 0 0% 25%; /* Dark gray accent */
+/* Tech Stack - Softer light blue color */
+--badge-bg: 200 92% 75%; /* Softer pastel blue background */
+--badge-text: 0 0% 20%;  /* Dark text for better readability */
+
+    
+    /* Status Colors */
+    --status-completed: 120 60% 50%; /* Green for completed */
+    --status-active: 180 100% 50%; /* Cyan for active */
+    
+    
+    /* Borders - More rounded */
+    --border-subtle: 0 0% 15%;
+    --border-accent: 180 100% 50%;
+    
+    /* Enhanced shadows for better hover effects */
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 10px 25px -3px hsl(0 0% 0% / 0.4);
+    --shadow-subtle: 0 2px 4px hsl(0 0% 0% / 0.1);
+    
+    /* Smooth transitions for better hover */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * {
+    border-color: hsl(var(--border-subtle));
+  }
+
+  body {
+    @apply bg-page-bg text-text-primary font-body;
+  }
+}
