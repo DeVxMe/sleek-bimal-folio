@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-page-bg font-body">
       {/* Main Dashboard Container */}
-      <div className="min-h-screen flex items-start justify-center px-4 py-8">
+      <div className="min-h-screen flex items-start justify-center px-4 py-4"> {/* Changed from py-8 to py-4 */}
         <div className="w-full max-w-4xl bg-dashboard-bg rounded-2xl shadow-card border border-border-subtle transition-all duration-300 hover:shadow-card-hover">
           {/* Header Section - Horizontal Layout */}
           <div className="pt-12 pb-8 px-8">
@@ -22,38 +22,31 @@ const Index = () => {
               {/* Profile Image */}
               <div className="flex-shrink-0">
                 <img
-                  src={profileImage}
+                  src={"https://avatars.githubusercontent.com/u/180620539?v=4"}
                   alt="Bimal Chalise - Software Developer"
-                  className="w-20 h-20 rounded-2xl border-2 border-border-subtle transition-all duration-300 hover:border-accent-primary hover:scale-105 hover:shadow-card"
+                  className="w-20 h-20 rounded-2xl border-2 border-border-subtle transition-all duration-300  hover:scale-105 hover:shadow-card"
                 />
               </div>
 
               {/* Name and Title */}
               <div className="text-left">
-                <h1 className="text-4xl font-bold mb-2 text-text-primary">
+                <h1 className="text-3xl font-bold mb-2 text-text-primary">
                   Bimal Chalise
                 </h1>
                 <p className="text-lg text-text-secondary">
-                  Full-Stack Developer & Software Engineer
+Full Stack Blockchain Dev
                 </p>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="text-center">
-              <SocialLinks />
-            </div>
-          </div>
+            <div className="text-center -mb-10">
+  <SocialLinks />
+</div>          </div>
 
          {/* Projects Section */}
-<div className="px-8 pb-12">
-  <div className="mb-8">
-    <h2 className="text-2xl font-bold text-text-primary mb-2 text-center">
-      Featured Projects
-    </h2>
-    <p className="text-text-secondary text-center mb-6">
-      A collection of my latest work and contributions
-    </p>
+<div className="px-8 ">
+ 
 
     <div className="flex justify-center my-8">
       <div className="bg-[#1a1a1a] p-1 rounded-full border border-[#333] shadow-lg flex-col relative">
@@ -88,7 +81,6 @@ const Index = () => {
         </button>
       </div>
     </div>
-  </div>
 
             {/* Project Cards */}
             <div className="space-y-6">

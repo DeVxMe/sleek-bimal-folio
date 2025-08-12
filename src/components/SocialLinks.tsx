@@ -9,17 +9,17 @@ export const SocialLinks = () => {
     },
     {
       name: "LinkedIn", 
-      url: "https://linkedin.com/in/bimalchalise",
+      url: "https://www.linkedin.com/in/bimal-chalise-52a114339/",
       icon: Linkedin,
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/bimalchalise",
+      url: "https://x.com/BiMalxMe",
       icon: Twitter,
     },
     {
       name: "Email",
-      url: "bimalcgalise123@gmail.com",
+      url: "mailto:journeyxbimal@gmail.com",
       icon: Mail,
     }
   ];
