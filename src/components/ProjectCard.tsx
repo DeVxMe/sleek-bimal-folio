@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Eye, CheckCircle, Clock } from "lucide-react";
+import { ExternalLink, Github, Eye, CheckCircle, Clock, List } from "lucide-react";
 import { Project } from "@/data/projects";
 import { TechBadge } from "./TechBadge";
 
@@ -13,7 +13,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
 
   return (
     <div 
-      className="bg-card-bg border border-border-subtle rounded-2xl p-6 transition-all duration-300 hover:bg-card-hover hover:border-accent-primary hover:shadow-card-hover hover:-translate-y-1 hover:scale-[1.01] group"
+      className="bg-card-bg border border-border-subtle rounded-2xl p-6 transition-all duration-300 hover:bg-card-hover hover:shadow-card-hover hover:-translate-y-1 hover:scale-[1.01] group"
     >
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
@@ -44,11 +44,47 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
         {project.desc}
       </p>
 
+      {/* Features - horizontal pills */}
+      {project.features && project.features.length > 0 && (
+        <div className="mb-4">
+          <div className="flex items-center gap-2 mb-3 text-text-primary font-medium">
+            <List size={16} className="text-accent-primary" />
+            <span>Features</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {project.features.map((feature, idx) => (
+              <span
+                key={idx}
+                className="bg-accent-primary/10 text-accent-primary text-sm px-3 py-1 rounded-full select-none"
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Tech Stack */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        {project.tech_stacks.map((tech) => (
-          <TechBadge key={tech} tech={tech} />
-        ))}
+      <div className="mb-6">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="text-white">
+            <span role="img" aria-label="Tech Stack">
+              🛠️
+            </span>
+          </span>
+          <span className="text-white font-semibold  tracking-wide ">
+            Stacks
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {project.tech_stacks.map((tech) => (
+            <TechBadge
+              key={tech}
+              tech={tech}
+              className="bg-white/10 text-white border-0"
+            />
+          ))}
+        </div>
       </div>
 
       {/* Links */}
@@ -77,7 +113,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
         
         {project.tweet && (
           <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(project.tweet)}`}
+            href={project.tweet}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent-primary transition-all duration-300 hover:scale-105"
