@@ -22,7 +22,7 @@ const Index = () => {
               {/* Profile Image */}
               <div className="flex-shrink-0">
                 <img
-                  src={"https://avatars.githubusercontent.com/u/180620539?v=4"}
+                  src={"https://res.cloudinary.com/dvb8lhl7t/image/upload/v1755016385/bimal_fwytql.jpg"}
                   alt="Bimal Chalise - Software Developer"
                   className="w-20 h-20 rounded-2xl border-2 border-border-subtle transition-all duration-300  hover:scale-105 hover:shadow-card"
                 />
@@ -38,6 +38,7 @@ Full Stack Blockchain Dev
                 </p>
               </div>
             </div>
+
 
             {/* Social Links */}
             <div className="text-center -mb-10">

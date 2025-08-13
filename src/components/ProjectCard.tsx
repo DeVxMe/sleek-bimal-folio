@@ -8,8 +8,12 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project, index }: ProjectCardProps) => {
-  const StatusIcon = project.status === 'Completed' ? CheckCircle : Clock;
-  const statusColor = project.status === 'Completed' ? 'text-status-completed' : 'text-status-active';
+  // If project.status does not exist, treat as "Working..." with Clock icon and active color
+  const isCompleted = project.status === 'Completed';
+  const hasStatus = typeof project.status === "string" && project.status.length > 0;
+  const StatusIcon = isCompleted ? CheckCircle : Clock;
+  const statusColor = isCompleted ? 'text-status-completed' : 'text-status-active';
+  const statusText = hasStatus ? project.status : "Working...";
 
   return (
     <div 
@@ -25,7 +29,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <div className="flex items-center gap-2">
               <StatusIcon size={16} className={statusColor} />
               <span className="text-sm text-text-secondary">
-                {project.status}
+                {statusText}
               </span>
             </div>
           </div>
